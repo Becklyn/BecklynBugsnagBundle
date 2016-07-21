@@ -52,9 +52,9 @@ class BugsnagMonologHandler extends AbstractProcessingHandler
 
 
     /**
-     * @param Client   $client
-     * @param bool|int $level
-     * @param bool     $bubble
+     * @param Client $client
+     * @param int    $level
+     * @param bool   $bubble
      */
     public function __construct (Client $client, $level = Logger::ERROR, $bubble = true)
     {
