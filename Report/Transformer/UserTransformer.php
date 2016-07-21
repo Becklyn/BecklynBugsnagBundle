@@ -29,8 +29,9 @@ class UserTransformer implements ReportTransformer
     }
 
 
+
     /**
-     * @inheritDoc
+     * @inheritdoc
      */
     public function transformReport (Report $report, array $monologData)
     {

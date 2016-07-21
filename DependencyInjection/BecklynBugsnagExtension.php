@@ -20,8 +20,9 @@ class BecklynBugsnagExtension extends Extension
     private $processedConfiguration;
 
 
+
     /**
-     * @inheritDoc
+     * @param ProcessedConfiguration $processedConfiguration
      */
     public function __construct (ProcessedConfiguration $processedConfiguration)
     {

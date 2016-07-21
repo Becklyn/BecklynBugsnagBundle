@@ -20,8 +20,9 @@ class BecklynBugsnagBundle extends Bundle
     private $processedConfiguration;
 
 
+
     /**
-     * @inheritDoc
+     *
      */
     public function __construct ()
     {
@@ -31,7 +32,7 @@ class BecklynBugsnagBundle extends Bundle
 
 
     /**
-     * @inheritDoc
+     * @inheritdoc
      */
     public function build (ContainerBuilder $container)
     {
@@ -42,7 +43,7 @@ class BecklynBugsnagBundle extends Bundle
 
 
     /**
-     * @inheritDoc
+     * @inheritdoc
      */
     public function getContainerExtension ()
     {

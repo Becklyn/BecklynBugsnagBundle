@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class NotFoundTransformer implements ReportTransformer
 {
     /**
-     * @inheritDoc
+     * @inheritdoc
      */
     public function transformReport (Report $report, array $monologData)
     {
