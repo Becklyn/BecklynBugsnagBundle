@@ -1,0 +1,38 @@
+services:
+
+    # ------------------------------------------------------------------------------------------------------------------------
+    # Clients
+    # ------------------------------------------------------------------------------------------------------------------------
+    becklyn.bugsnag.client.javascript:
+        class: Becklyn\BugsnagBundle\Client\JavaScript
+        arguments:
+            - ~ # set in compiler pass
+
+
+
+    # ------------------------------------------------------------------------------------------------------------------------
+    # Report Transformer
+    # ------------------------------------------------------------------------------------------------------------------------
+    becklyn.bugsnag.report_transformer.not_found:
+        class: Becklyn\BugsnagBundle\Report\Transformer\NotFoundTransformer
+        tags:
+            - { name: becklyn.bugsnag.report_transformer }
+
+    becklyn.bugsnag.report_transformer.user:
+        class: Becklyn\BugsnagBundle\Report\Transformer\UserTransformer
+        arguments:
+            - "@security.token_storage"
+        tags:
+            - { name: becklyn.bugsnag.report_transformer }
+
+
+
+    # ------------------------------------------------------------------------------------------------------------------------
+    # Twig
+    # ------------------------------------------------------------------------------------------------------------------------
+    becklyn.bugsnag.twig_extension:
+        class: Becklyn\BugsnagBundle\Twig\BugsnagTwigExtension
+        arguments:
+            - "@becklyn.bugsnag.client.javascript"
+        tags:
+            - { name: twig.extension }
