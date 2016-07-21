@@ -34,7 +34,7 @@ class JavaScript
     {
         if (null !== $this->apiKey)
         {
-            return '<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js" data-apikey="' . $this->apiKey . '"></script>'
+            return '<script src="https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js" data-apikey="' . $this->apiKey . '"></script>'
                 . '<script>Bugsnag.user = {id: "?"};</script>';
         }
 
