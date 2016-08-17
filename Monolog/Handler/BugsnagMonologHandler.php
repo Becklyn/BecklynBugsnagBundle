@@ -26,7 +26,7 @@ class BugsnagMonologHandler extends AbstractProcessingHandler
      *
      * @var string[]
      */
-    const SEVERITY_MAPPING = [
+    private static $severityMapping = [
         Logger::DEBUG     => self::BUGSNAG_SEVERITY_INFO,
         Logger::INFO      => self::BUGSNAG_SEVERITY_INFO,
         Logger::NOTICE    => self::BUGSNAG_SEVERITY_INFO,
@@ -80,8 +80,8 @@ class BugsnagMonologHandler extends AbstractProcessingHandler
      */
     protected function write (array $record)
     {
-        $severity = array_key_exists($record['level'], self::SEVERITY_MAPPING)
-            ? self::SEVERITY_MAPPING[$record['level']]
+        $severity = array_key_exists($record['level'], self::$severityMapping)
+            ? self::$severityMapping[$record['level']]
             : self::BUGSNAG_SEVERITY_ERROR;
 
         $callback = function (Report $report) use ($severity, $record)
