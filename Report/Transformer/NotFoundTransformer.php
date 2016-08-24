@@ -4,14 +4,14 @@ namespace Becklyn\BugsnagBundle\Report\Transformer;
 
 use Bugsnag\Report;
 use Becklyn\BugsnagBundle\Monolog\Handler\BugsnagMonologHandler;
-use Becklyn\BugsnagBundle\Report\ReportTransformer;
+use Becklyn\BugsnagBundle\Report\ReportTransformerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 /**
  *
  */
-class NotFoundTransformer implements ReportTransformer
+class NotFoundTransformerInterface implements ReportTransformerInterface
 {
     /**
      * @inheritdoc

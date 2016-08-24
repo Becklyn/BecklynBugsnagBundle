@@ -8,7 +8,7 @@ use Bugsnag\Report;
 /**
  *
  */
-interface ReportTransformer
+interface ReportTransformerInterface
 {
     /**
      * Transforms the report

@@ -3,7 +3,7 @@
 namespace Becklyn\BugsnagBundle\Report\Transformer;
 
 use Bugsnag\Report;
-use Becklyn\BugsnagBundle\Report\ReportTransformer;
+use Becklyn\BugsnagBundle\Report\ReportTransformerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  *
  */
-class UserTransformer implements ReportTransformer
+class UserTransformerInterface implements ReportTransformerInterface
 {
     /**
      * @var TokenStorageInterface

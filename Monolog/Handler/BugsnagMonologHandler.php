@@ -4,7 +4,7 @@ namespace Becklyn\BugsnagBundle\Monolog\Handler;
 
 use Bugsnag\Client;
 use Bugsnag\Report;
-use Becklyn\BugsnagBundle\Report\ReportTransformer;
+use Becklyn\BugsnagBundle\Report\ReportTransformerInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
 
@@ -45,7 +45,7 @@ class BugsnagMonologHandler extends AbstractProcessingHandler
 
 
     /**
-     * @var ReportTransformer[]
+     * @var ReportTransformerInterface[]
      */
     private $reportTransformers = [];
 
@@ -66,9 +66,9 @@ class BugsnagMonologHandler extends AbstractProcessingHandler
 
 
     /**
-     * @param ReportTransformer $transformer
+     * @param ReportTransformerInterface $transformer
      */
-    public function addReportTransformer (ReportTransformer $transformer)
+    public function addReportTransformer (ReportTransformerInterface $transformer)
     {
         $this->reportTransformers[] = $transformer;
     }
