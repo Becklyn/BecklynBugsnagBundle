@@ -90,6 +90,7 @@ class MonitoringCompilerPass implements CompilerPassInterface
         $bugsnagClient = new Definition(Client::class, [
             $this->configuration->getApiKey(),
         ]);
+        $bugsnag->setFilters(['clientIp']);
         $bugsnagClient->setFactory([Client::class, "make"]);
         $bugsnagClient->setPublic(false);
 
