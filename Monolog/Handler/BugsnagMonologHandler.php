@@ -107,7 +107,7 @@ class BugsnagMonologHandler extends AbstractProcessingHandler
         }
         else
         {
-            $this->client->notifyError((string) $record['message'], $callback);
+            $this->client->notifyError("error", (string) $record['message'], $callback);
         }
     }
 }
