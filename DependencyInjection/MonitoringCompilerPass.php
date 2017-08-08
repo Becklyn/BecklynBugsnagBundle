@@ -90,7 +90,6 @@ class MonitoringCompilerPass implements CompilerPassInterface
         $bugsnagClient = new Definition(Client::class, [
             $this->configuration->getApiKey(),
         ]);
-        $bugsnag->setFilters(['clientIp']);
         $bugsnagClient->setFactory([Client::class, "make"]);
         $bugsnagClient->setPublic(false);
 
@@ -98,6 +97,7 @@ class MonitoringCompilerPass implements CompilerPassInterface
         $rootDir = dirname($rootDir);
         $bugsnagClient->addMethodCall("setProjectRoot", [$rootDir]);
         $bugsnagClient->addMethodCall("setStripPath", [$rootDir]);
+        $bugsnagClient->addMethodCall("setFilters", [['clientIp']]);
 
         return $bugsnagClient;
     }
