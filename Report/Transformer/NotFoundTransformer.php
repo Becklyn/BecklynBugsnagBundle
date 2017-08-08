@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 /**
  *
  */
-class NotFoundTransformerInterface implements ReportTransformerInterface
+class NotFoundTransformer implements ReportTransformerInterface
 {
     /**
      * @inheritdoc

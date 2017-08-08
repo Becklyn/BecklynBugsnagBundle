@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  *
  */
-class UserTransformerInterface implements ReportTransformerInterface
+class UserTransformer implements ReportTransformerInterface
 {
     /**
      * @var TokenStorageInterface
